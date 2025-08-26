@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="DataProtection\" />
+    <None Remove="Types\" />
+    <None Remove="Operations\" />
+    <None Remove="Operations\User\" />
+    <None Remove="Operations\Product\" />
+    <None Remove="Operations\Setting\" />
+    <None Remove="Operations\Order\" />
+    <None Remove="Operations\Order\Dtos\" />
+    <None Remove="Operations\Product\Dtos\" />
+    <None Remove="Operations\Setting\Dtos\" />
+    <None Remove="Operations\User\Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataProtection\" />
+    <Folder Include="Types\" />
+    <Folder Include="Operations\" />
+    <Folder Include="Operations\User\" />
+    <Folder Include="Operations\Product\" />
+    <Folder Include="Operations\Setting\" />
+    <Folder Include="Operations\User\" />
+    <Folder Include="Operations\Order\" />
+    <Folder Include="Operations\Order\Dtos\" />
+    <Folder Include="Operations\Product\Dtos\" />
+    <Folder Include="Operations\Setting\Dtos\" />
+    <Folder Include="Operations\User\Dtos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Data\ECommerce.Data.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="6.0.30" />
+  </ItemGroup>
+</Project>

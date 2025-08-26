@@ -1,0 +1,12 @@
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/bin/Debug/net6.0/ECommerce.Data.deps.json
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/bin/Debug/net6.0/ECommerce.Data.dll
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/bin/Debug/net6.0/ECommerce.Data.pdb
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.csproj.AssemblyReference.cache
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.AssemblyInfoInputs.cache
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.AssemblyInfo.cs
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.csproj.CoreCompileInputs.cache
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.dll
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/refint/ECommerce.Data.dll
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ECommerce.Data.pdb
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Data/obj/Debug/net6.0/ref/ECommerce.Data.dll
