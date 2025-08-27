@@ -1,6 +1,9 @@
 ECommerce Multi-Layered Web API — README
+
 Çok katmanlı (.NET 6) bir Online Alışveriş Platformu örneği.
+
 Amaç: Ödev gereksinimlerini birebir karşılayan, Repository + UnitOfWork, EF Core Code-First (PostgreSQL), JWT ile kimlik doğrulama, Data Protection ile parola koruma, Middleware’ler (Log, Maintenance, Global Exception), Action Filter (saat kısıtı), Model Validation ve DI içeren bir API.
+
 🧱 Proje Yapısı
 ECommerceMultiLayeredApiProject/
 ├─ ECommerce.Data/                # Veri erişim katmanı (EF Core)
@@ -45,6 +48,7 @@ ECommerceMultiLayeredApiProject/
    ├─ Models/ (RegisterRequest, LoginRequest, LoginResponse)
    ├─ appsettings.json
    └─ Program.cs
+   
 Bağımlılıklar:
 ECommerce.WebApi → ECommerce.Business & ECommerce.Data
 ECommerce.Business → ECommerce.Data
@@ -54,6 +58,7 @@ PostgreSQL (ör: localhost:5432, kullanıcı: postgres, şifre: 1234)
 (İsteğe bağlı) Visual Studio 2022 for Mac veya Rider/VSCode
 EF CLI:
 dotnet tool install --global dotnet-ef
+
 📦 NuGet Paketleri (özet)
 Data: Microsoft.EntityFrameworkCore, Npgsql.EntityFrameworkCore.PostgreSQL
 Business: Microsoft.AspNetCore.DataProtection
@@ -84,19 +89,23 @@ dotnet ef migrations add InitialCreate -s ECommerce.WebApi -p ECommerce.Data
 # DB oluştur / güncelle
 dotnet ef database update -s ECommerce.WebApi -p ECommerce.Data
 Seed: SettingEntity (Id=1, MaintenanceMode=false) başlangıçta eklenir.
+
 ▶️ Çalıştırma
 dotnet run --project ECommerce.WebApi
 Swagger UI: https://localhost:xxxxx/swagger
+
 🔐 Kimlik Doğrulama (JWT) & Parola Koruma
 Login sonrası Bearer <token> üretir (HS256).
 ClaimTypes.Role ekli olduğu için [Authorize(Roles="Admin")] çalışır.
 Parola: ASP.NET Core Data Protection ile Protect/Unprotect (ödev şartı).
 Not: Üretimde geri döndürülemez hash (PBKDF2/BCrypt) tercih edilir; bu proje ödev gereksinimini karşılar.
+
 🧩 Middleware & Filter’lar
 GlobalExceptionMiddleware: Beklenmeyen hataları yakalar → tek tip JSON (500).
 MaintenanceMiddleware: DB’de Settings tablosu MaintenanceMode=true ise, login/register/state hariç tüm endpoint’ler 503 döner.
 RequestLoggingMiddleware: Metot/Path/UserId (varsa) loglar.
 TimeControlFilter: Belirli saatler dışında (varsayılan 15:00-23:59) çağrıları 403 ile kapatır (örn. ürün PUT).
+
 🧠 Mimari ve Tasarım Kararları
 Katmanlı Mimari: API (sunum) ↔ Business (iş) ↔ Data (veri).
 Repository + UnitOfWork: Veri erişimi soyutlanır; çoklu repository işlemleri tek SaveChanges ile persist edilir.
@@ -125,6 +134,7 @@ DELETE /api/orders/{id} – Sahibi veya Admin
 Settings
 PATCH /api/settings/maintenance-toggle – Admin (bakım modunu aç/kapat)
 GET /api/settings/maintenance-state – Anonim (durum)
+
 🧪 Hızlı Deneme Adımları (Swagger ile)
 Register → POST /api/auth/register
 Login → POST /api/auth/login → token’ı kopyala
@@ -149,10 +159,12 @@ ECommerce.Business projesine Microsoft.AspNetCore.DataProtection paketini ekle.
 Bakım modu açık. GET /api/settings/maintenance-state ile teyit et; gerekirse toggle.
 DateTime/UTC
 Tarihler UtcNow kullanır; PostgreSQL timestamptz ile uyumludur.
+
 🛡️ Güvenlik Notları
 Parola Data Protection ile şifrelenir ve geri açılabilir (ödev gereği).
 Üretimde hash (tek yön) tercih edin.
 Jwt:SecretKey en az 32 karakter ve gizli tutulmalı.
+
 📌 Özelleştirme İpuçları
 Saat kısıtı: TimeControlFilter(StartTime="09:00", EndTime="18:00")
 Bakım modu beyaz liste: MaintenanceMiddleware içindeki Allowed setine ekle.
