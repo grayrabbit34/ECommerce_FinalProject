@@ -15,8 +15,7 @@ namespace ECommerce.WebApi.Jwt
     {
         
         /// Verilen bilgilere göre imzalı bir JWT token üretir.
-        /// Dönen tuple: (token string'i, token bitiş zamanı - UTC)
-       
+        
         public static string GenerateJwtToken(JwtDto dto)
         {
             // Simetrik anahtar (SecretKey) -> HMAC SHA256 ile imzalanır
@@ -51,7 +50,7 @@ namespace ECommerce.WebApi.Jwt
                 issuer: dto.Issuer,
                 audience: dto.Audience,
                 claims: claims,
-                null,
+                notBefore: DateTime.UtcNow,
                 expires: expires,
                 signingCredentials: crediantials
             );
