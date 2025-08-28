@@ -29,6 +29,9 @@ namespace ECommerce.Business.Operations.Order.Dtos
             _uow = uow;
         }
 
+        /// <summary>
+        /// Yeni sipariş oluşturur, stok kontrolü yapar ve ürünleri ilişkilendirir.
+        /// </summary>
         public async Task<ServiceMessage<OrderDto>> AddOrder(AddOrderDto dto, int userId)
         {
             if (dto.Items.Count == 0)
@@ -50,7 +53,7 @@ namespace ECommerce.Business.Operations.Order.Dtos
 
             var order = new OrderEntity
             {
-                UserId = userId,
+                CustomerId = userId,
                 OrderDate = DateTime.UtcNow,
                 TotalAmount = total
             };
@@ -91,7 +94,7 @@ namespace ECommerce.Business.Operations.Order.Dtos
         public Task<List<OrderDto>> GetOrders(int? userId = null)
         {
             var q = _orderRepo.GetAll();
-            if (userId.HasValue) q = q.Where(o => o.UserId == userId.Value);
+            if (userId.HasValue) q = q.Where(o => o.CustomerId == userId.Value);
 
             var list = q.OrderByDescending(o => o.Id)
                 .Select(o => new OrderDto
@@ -114,7 +117,7 @@ namespace ECommerce.Business.Operations.Order.Dtos
             var o = _orderRepo.Get(x => x.Id == id);
             if (o == null) return Task.FromResult<OrderDto?>(null);
 
-            if (!isAdmin && requesterUserId.HasValue && o.UserId != requesterUserId.Value)
+            if (!isAdmin && requesterUserId.HasValue && o.CustomerId != requesterUserId.Value)
                 return Task.FromResult<OrderDto?>(null);
 
             var dto = new OrderDto
@@ -137,7 +140,7 @@ namespace ECommerce.Business.Operations.Order.Dtos
             var order = _orderRepo.Get(x => x.Id == id);
             if (order == null) return new ServiceMessage { IsSucceed = false, Message = "Sipariş bulunamadı." };
 
-            if (!isAdmin && order.UserId != requesterUserId)
+            if (!isAdmin && order.CustomerId != requesterUserId)
                 return new ServiceMessage { IsSucceed = false, Message = "Yetkisiz işlem." };
 
             // Stok iadesi

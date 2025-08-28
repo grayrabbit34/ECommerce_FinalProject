@@ -16,7 +16,6 @@
     <None Remove="Operations\Order\" />
     <None Remove="Operations\Order\Dtos\" />
     <None Remove="Operations\Product\Dtos\" />
-    <None Remove="Operations\Setting\Dtos\" />
     <None Remove="Operations\User\Dtos\" />
   </ItemGroup>
   <ItemGroup>
@@ -30,7 +29,6 @@
     <Folder Include="Operations\Order\" />
     <Folder Include="Operations\Order\Dtos\" />
     <Folder Include="Operations\Product\Dtos\" />
-    <Folder Include="Operations\Setting\Dtos\" />
     <Folder Include="Operations\User\Dtos\" />
   </ItemGroup>
   <ItemGroup>

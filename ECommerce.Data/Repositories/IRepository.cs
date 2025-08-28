@@ -25,6 +25,7 @@ namespace ECommerce.Data.Repositories
 
         //nesneyi çekmektense sorguyu çekmek daha performanslı olacağı için sorgu tipinde dönen bir metot da ekliyorum
         IQueryable<TEntity> GetAll(Expression<Func<TEntity, bool>>? predicate = null);
+        TEntity GetById(int v);
     }
 
 

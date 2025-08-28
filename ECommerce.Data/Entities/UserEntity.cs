@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Data;
 using ECommerce.Data.Enums;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,9 +9,14 @@ namespace ECommerce.Data.Entities;
 //authentication ve authorization işlemlerimizde, oturum açma işlemlerimizde, yetki işlemlerimizde kullanılacak sınıf 
 public class UserEntity : BaseEntity
 {
+    [Required, StringLength(50)]
     public string FirstName { get; set; } = null!;
+
+    [Required, StringLength(50)]
     public string LastName { get; set; } = null!;
     //giriş işlemlerinde kullanılacak
+
+    [Required, EmailAddress]
     public string Email { get; set; } = null!;
     public string PhoneNumber { get; set; } = null!;
     //giriş işlemlerinde kullanılacak

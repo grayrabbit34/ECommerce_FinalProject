@@ -8,8 +8,8 @@
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/bin/Debug/net6.0/ECommerce.Business.pdb
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/bin/Debug/net6.0/ECommerce.Data.dll
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/bin/Debug/net6.0/ECommerce.Data.pdb
-/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/obj/Debug/net6.0/ECommerce.Business.csproj.CopyComplete
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/obj/Debug/net6.0/ECommerce.Business.dll
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/obj/Debug/net6.0/refint/ECommerce.Business.dll
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/obj/Debug/net6.0/ECommerce.Business.pdb
 /Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/obj/Debug/net6.0/ref/ECommerce.Business.dll
+/Users/mac/Desktop/patika/ECommerceMultiLayeredApiProject/ECommerce.Business/obj/Debug/net6.0/ECommerce.Business.csproj.CopyComplete

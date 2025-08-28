@@ -10,9 +10,9 @@ namespace ECommerce.Data.Entities
 
 
         //Relational Property
-        public int UserId { get; set; }
-        public UserEntity? User { get; set; }
-
+        public int CustomerId { get; set; }
+        public UserEntity? Customer { get; set; }
+         
         //relational property
         //veri tablosunda kolona dönüşmeyecek olan verileri diğerlerinden ayırmak için yazıyorum
 
